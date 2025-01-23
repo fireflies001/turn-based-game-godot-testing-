@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://cl1k2w4kmgkgg"]
+
+[ext_resource type="Script" path="res://character_1.gd" id="1_vqmvt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njgmu"]
+size = Vector2(19, 18)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fqrg"]
+bg_color = Color(0.27451, 0.639216, 0.854902, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bl4am"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_vqmvt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_njgmu")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 245.0
+offset_bottom = 202.0
+scale = Vector2(1.04, 1.16)
+theme_override_styles/panel = SubResource("StyleBoxFlat_2fqrg")
+
+[node name="cursor" type="PanelContainer" parent="."]
+visible = false
+offset_left = -111.0
+offset_top = 91.0
+offset_right = -71.0
+offset_bottom = 131.0
+scale = Vector2(1.96, 0.8)
+theme_override_styles/panel = SubResource("StyleBoxFlat_bl4am")

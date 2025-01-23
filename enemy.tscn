@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwklmp7muiwbg"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_xm3b8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20w6d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dj5q5"]
+bg_color = Color(0.835294, 0.141176, 0.239216, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="enemy" type="CharacterBody2D"]
+script = ExtResource("1_xm3b8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_20w6d")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 245.0
+offset_bottom = 202.0
+scale = Vector2(1.04, 1.16)
+theme_override_styles/panel = SubResource("StyleBoxFlat_dj5q5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = 280.0
+offset_top = 122.0
+offset_right = 320.0
+offset_bottom = 162.0
+scale = Vector2(2.08, 0.72)

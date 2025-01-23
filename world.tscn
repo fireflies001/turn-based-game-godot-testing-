@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqygpwwc3d4mg"]
+
+[ext_resource type="PackedScene" uid="uid://ckp8jsaaxd23j" path="res://player_group.tscn" id="1_xomum"]
+[ext_resource type="PackedScene" uid="uid://cvcnc41u5jerx" path="res://enemy_group.tscn" id="2_y4tuj"]
+
+[node name="world" type="Node2D"]
+
+[node name="player_group" parent="." instance=ExtResource("1_xomum")]
+position = Vector2(80, 343)
+
+[node name="enemy_group" parent="." instance=ExtResource("2_y4tuj")]
+position = Vector2(790, 137)
+
+[connection signal="next_player" from="enemy_group" to="player_group" method="_on_enemy_group_next_player"]
