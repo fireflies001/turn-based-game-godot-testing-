@@ -1,0 +1,100 @@
+[gd_scene load_steps=3 format=3 uid="uid://bicskicny0ke5"]
+
+[ext_resource type="Script" path="res://skill_choosing.gd" id="1_bcq4x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_coklg"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="skillSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bcq4x")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.305882, 0.305882, 0.305882, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -261.0
+offset_top = -93.5
+offset_right = 261.0
+offset_bottom = 93.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_coklg")
+
+[node name="Margin" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="label_container" type="VBoxContainer" parent="PanelContainer/Margin"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/Margin/label_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Please choose a skill"
+
+[node name="Label2" type="Label" parent="PanelContainer/Margin/label_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Please choose a skill"
+
+[node name="skill_selection_box" type="HBoxContainer" parent="PanelContainer/Margin/label_container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="fire" type="Button" parent="PanelContainer/Margin/label_container/skill_selection_box"]
+layout_mode = 2
+text = "FIRE"
+
+[node name="water" type="Button" parent="PanelContainer/Margin/label_container/skill_selection_box"]
+layout_mode = 2
+text = "WATER"
+
+[node name="earth" type="Button" parent="PanelContainer/Margin/label_container/skill_selection_box"]
+layout_mode = 2
+text = "EARTH"
+
+[node name="Auto Attack" type="Button" parent="PanelContainer/Margin/label_container/skill_selection_box"]
+layout_mode = 2
+text = "AUTO ATTACK"
+
+[node name="Button" type="Button" parent="PanelContainer/Margin/label_container/skill_selection_box"]
+layout_mode = 2
+text = "DONE"
+
+[node name="skill_selected_box" type="HBoxContainer" parent="PanelContainer/Margin/label_container"]
+layout_mode = 2
+
+[connection signal="pressed" from="PanelContainer/Margin/label_container/skill_selection_box/fire" to="." method="_on_fire_pressed"]
+[connection signal="pressed" from="PanelContainer/Margin/label_container/skill_selection_box/water" to="." method="_on_water_pressed"]
+[connection signal="pressed" from="PanelContainer/Margin/label_container/skill_selection_box/earth" to="." method="_on_earth_pressed"]
+[connection signal="pressed" from="PanelContainer/Margin/label_container/skill_selection_box/Auto Attack" to="." method="_on_auto_attack_pressed"]
+[connection signal="pressed" from="PanelContainer/Margin/label_container/skill_selection_box/Button" to="." method="_on_button_pressed"]
