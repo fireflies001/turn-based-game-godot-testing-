@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cl1k2w4kmgkgg"]
+[gd_scene load_steps=6 format=3 uid="uid://cl1k2w4kmgkgg"]
 
 [ext_resource type="Script" path="res://character_1.gd" id="1_vqmvt"]
+[ext_resource type="PackedScene" uid="uid://cgtnxg5xltixf" path="res://heath.tscn" id="2_h4eow"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_njgmu"]
 size = Vector2(19, 18)
@@ -19,8 +20,9 @@ corner_radius_bottom_left = 5
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bl4am"]
 bg_color = Color(1, 1, 1, 1)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("healthNode")]
 script = ExtResource("1_vqmvt")
+healthNode = NodePath("Node2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0)
@@ -42,3 +44,6 @@ offset_right = -71.0
 offset_bottom = 131.0
 scale = Vector2(1.96, 0.8)
 theme_override_styles/panel = SubResource("StyleBoxFlat_bl4am")
+
+[node name="Node2D" parent="." instance=ExtResource("2_h4eow")]
+health_points = 100.0

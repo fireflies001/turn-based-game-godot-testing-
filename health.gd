@@ -1,11 +1,23 @@
-extends Node2D
+
+class_name HEALTH extends Node2D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+@export var health_points: float
+var actual_health_points: float
+func set_heath():
+	actual_health_points = health_points
+	
+func get_heath():
+	return actual_health_points
+		
+func regenerate_health(health:float, multiplier: float):
+	if(health < actual_health_points):
+		health *= multiplier
+	return health
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func calculate_health():
 	pass
+
+func damage_taken(curHealth, value):
+	curHealth -= value
+	return curHealth

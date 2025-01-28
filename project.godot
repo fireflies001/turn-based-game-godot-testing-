@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="Ai"
-run/main_scene="res://world.tscn"
+run/main_scene="res://skill_choosing.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Skills="*res://Skills.gd"
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
 
 [input]
 
