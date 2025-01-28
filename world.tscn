@@ -53,5 +53,10 @@ text = "Choose an Action"
 [node name="Skill_Selection" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
+[node name="PanelContainer2" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="skill_pressed" from="." to="enemy_group" method="_on_control_skill_pressed"]
 [connection signal="next_player" from="enemy_group" to="player_group" method="_on_enemy_group_next_player"]
